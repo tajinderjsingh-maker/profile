@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TJS — Resume v5.0 (2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0d0d0f;--red:#e8232e;--gray:#6d6d74;--hair:#0d0d0f;--paper:#fdfdfc;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+body{background:#e4e4e2;font-family:'Inter',sans-serif;color:var(--ink);font-size:8.8pt;line-height:1.5;}
+.page{width:210mm;height:297mm;background:var(--paper);margin:10mm auto;position:relative;overflow:hidden;box-shadow:0 3px 24px rgba(0,0,0,.18);display:flex;flex-direction:column;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+.sg{font-family:'Space Grotesk',sans-serif;}
+.ub{font-family:'Unbounded',sans-serif;}
+
+/* top meta bar */
+.metabar{display:flex;justify-content:space-between;border-bottom:1.5pt solid var(--ink);padding:5mm 10mm 2.5mm;font-family:'IBM Plex Mono',monospace;font-size:6.8pt;letter-spacing:.14em;}
+.metabar .red{color:var(--red);}
+
+/* masthead */
+.mast{display:grid;grid-template-columns:1fr 64mm;border-bottom:1.5pt solid var(--ink);}
+.mast-name{padding:6.5mm 0 6mm 10mm;}
+h1{font-family:'Unbounded',sans-serif;font-weight:900;font-size:27pt;line-height:1.02;letter-spacing:-.01em;}
+h1 .dot{color:var(--red);}
+.mast-side{border-left:.6pt solid var(--ink);padding:6.5mm 10mm 6mm 6mm;display:flex;flex-direction:column;justify-content:space-between;}
+.roles{font-family:'Space Grotesk',sans-serif;font-size:11.5pt;font-weight:700;line-height:1.55;text-transform:uppercase;letter-spacing:.03em;}
+.roles span{color:var(--red);}
+.aff{font-size:8pt;color:var(--gray);margin-top:2.4mm;line-height:1.55;}
+.contact{font-family:'IBM Plex Mono',monospace;font-size:6.6pt;line-height:1.9;margin-top:3mm;}
+
+/* ticker */
+.ticker{background:var(--ink);color:#fff;display:flex;align-items:center;gap:5mm;padding:2.6mm 10mm;font-family:'IBM Plex Mono',monospace;font-size:7pt;letter-spacing:.08em;}
+.ticker b{color:var(--red);font-weight:500;white-space:nowrap;}
+
+/* statement */
+.statement{padding:6mm 10mm 5.5mm;border-bottom:.6pt solid var(--ink);}
+.statement p{font-family:'Space Grotesk',sans-serif;font-size:13.6pt;font-weight:500;line-height:1.45;max-width:172mm;}
+.statement p em{font-style:normal;color:var(--red);}
+.statement .sub{font-family:'Inter',sans-serif;font-size:8.6pt;color:var(--gray);margin-top:3mm;max-width:160mm;line-height:1.6;}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1.5pt solid var(--ink);}
+.stat{padding:3.6mm 6mm 3.2mm 10mm;border-right:.6pt solid var(--ink);}
+.stat:last-child{border-right:0;}
+.stat .n{font-family:'Unbounded',sans-serif;font-weight:700;font-size:15pt;line-height:1;}
+.stat .n i{font-style:normal;color:var(--red);}
+.stat .l{font-family:'IBM Plex Mono',monospace;font-size:6.4pt;letter-spacing:.12em;color:var(--gray);margin-top:1.6mm;text-transform:uppercase;}
+
+/* version blocks */
+.vlabel{font-family:'IBM Plex Mono',monospace;font-size:6.8pt;letter-spacing:.22em;padding:4mm 10mm 0;color:var(--gray);}
+.vrow{display:grid;grid-template-columns:44mm 1fr;border-bottom:.6pt solid var(--ink);}
+.vrow:last-of-type{border-bottom:0;}
+.vhead{padding:3.6mm 5mm 3.6mm 10mm;border-right:.6pt solid var(--ink);}
+.vnum{font-family:'Unbounded',sans-serif;font-weight:900;font-size:19pt;line-height:1;}
+.vnum sup{font-size:8pt;color:var(--red);font-weight:700;}
+.vera{font-family:'Space Grotesk',sans-serif;font-size:8.6pt;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-top:2mm;line-height:1.35;}
+.vyears{font-family:'IBM Plex Mono',monospace;font-size:6.8pt;color:var(--red);margin-top:1.4mm;letter-spacing:.1em;}
+.vwhere{font-size:7.4pt;color:var(--gray);margin-top:2mm;line-height:1.5;}
+.vbody{padding:3.6mm 10mm 3.6mm 6mm;}
+.vtheme{font-family:'Space Grotesk',sans-serif;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:2.6mm 0 1mm;}
+.vtheme:first-child{margin-top:0;}
+ul{list-style:none;}
+li{font-size:8pt;color:#2e2e33;line-height:1.42;padding-left:4mm;position:relative;margin-bottom:.7mm;}
+li::before{content:"→";position:absolute;left:0;color:var(--red);font-size:7pt;top:.3mm;font-family:'IBM Plex Mono',monospace;}
+
+/* page 2 layout */
+.split{display:grid;grid-template-columns:1fr 66mm;flex:1;}
+.split-l{border-right:1.5pt solid var(--ink);}
+.sec2{font-family:'IBM Plex Mono',monospace;font-size:6.6pt;letter-spacing:.2em;color:var(--gray);padding:3mm 10mm 1.4mm;text-transform:uppercase;}
+.sec2 b{color:var(--ink);font-weight:500;}
+.pad{padding:0 8mm 2.6mm 10mm;}
+.padr{padding:0 8mm 2.6mm 8mm;}
+.proj{display:flex;gap:3.4mm;margin-bottom:1.7mm;}
+.proj .yr{font-family:'IBM Plex Mono',monospace;font-size:6.8pt;color:var(--red);flex:0 0 12mm;padding-top:.7mm;}
+.proj .t{font-size:7.9pt;line-height:1.38;color:#2e2e33;}
+.proj .t b{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);}
+.tag{display:inline-block;border:.6pt solid var(--ink);border-radius:0;padding:.6mm 1.8mm;font-family:'IBM Plex Mono',monospace;font-size:6.1pt;margin:0 .9mm 1.1mm 0;letter-spacing:.02em;}
+.tag.hot{background:var(--ink);color:#fff;border-color:var(--ink);}
+.tag.red{border-color:var(--red);color:var(--red);}
+.tiert{font-family:'Space Grotesk',sans-serif;font-size:7.4pt;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin:1.8mm 0 .9mm;}
+.tiert .mono{font-size:6.2pt;color:var(--red);font-weight:400;margin-left:1mm;}
+.eduline{font-size:7.7pt;line-height:1.45;color:#2e2e33;margin-bottom:1.3mm;}
+.eduline b{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);}
+.awflow{font-size:7.5pt;line-height:1.55;color:#2e2e33;}
+.awflow b{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--ink);}
+
+/* footer */
+.foot{border-top:1.5pt solid var(--ink);display:flex;justify-content:space-between;align-items:center;padding:3mm 10mm;font-family:'IBM Plex Mono',monospace;font-size:6.6pt;letter-spacing:.12em;margin-top:auto;}
+.foot .red{color:var(--red);}
+
+.p2 li{font-size:7.2pt;line-height:1.34;margin-bottom:.4mm;}
+.p2 .vhead{padding:2.2mm 5mm 2.2mm 10mm;}
+.p2 .vbody{padding:2.2mm 10mm 2.2mm 6mm;}
+.p2 .vnum{font-size:15pt;}
+.p2 .vera{font-size:8pt;margin-top:1.4mm;}
+.p2 .vwhere{margin-top:1.2mm;font-size:7pt;}
+.p2 .metabar{padding:3mm 10mm 1.8mm;}
+.p2 .sec2{padding:1.8mm 10mm .8mm;}
+.p2 .proj{margin-bottom:1mm;}
+.p2 .proj .t{font-size:7.2pt;line-height:1.3;}
+.p2 .tag{font-size:5.8pt;padding:.4mm 1.4mm;margin:0 .7mm .7mm 0;}
+.p2 .tiert{font-size:7pt;margin:1.1mm 0 .6mm;}
+.p2 .eduline{font-size:7pt;line-height:1.34;margin-bottom:.8mm;}
+.p2 .awflow{font-size:6.9pt;line-height:1.4;}
+.p2 .pad{padding-bottom:1.4mm;}
+.p2 .padr{padding-bottom:1.4mm;}
+.p2 .foot{padding:2.4mm 10mm;}
+@media print{body{background:none;}.page{margin:0;box-shadow:none;page-break-after:always;}.page:last-child{page-break-after:auto;}.noprint{display:none;}}
+@page{size:A4;margin:0;}
+.noprint{max-width:210mm;margin:6mm auto 0;text-align:center;font-size:8.5pt;color:#666;font-family:'IBM Plex Mono',monospace;}
+</style>
+</head>
+<body>
+<div class="noprint">Preview · Export: Ctrl/Cmd+P → Save as PDF → A4 · margins none · background graphics ON</div>
+
+<!-- ==================== PAGE 1 ==================== -->
+<div class="page">
+  <div class="metabar">
+    <span>RESUME — 2026 EDITION</span>
+    <span class="red">SYSTEM STATUS: ACTIVELY EVOLVING</span>
+    <span>NEW DELHI, IN</span>
+  </div>
+
+  <div class="mast">
+    <div class="mast-name">
+      <h1>TAJINDER<br>JEET SINGH<span class="dot">.</span></h1>
+    </div>
+    <div class="mast-side">
+      <div>
+        <p class="roles"><span>AI Evangelist</span><br>Creative Technologist<br>Design Educator</p>
+        <p class="aff">Associate Professor — Communication, Film &amp; Gaming (CFG), Pearl Academy, Delhi</p>
+      </div>
+      <p class="contact">tajinderjsingh@gmail.com<br>+91 98106 76654<br>in/tajinderjsingh</p>
+    </div>
+  </div>
+
+  <div class="ticker">
+    <b>● LATEST</b>
+    <span>LAUNCHED: REAL-TIME INTERACTIVE DIGITAL CLONE (2026) &nbsp;///&nbsp; CURATED: PEARL ACADEMY'S FIRST AI-DRIVEN STUDENT PORTFOLIO SHOWCASE</span>
+  </div>
+
+  <div class="statement">
+    <p>Two careers, run in parallel for 24+ years — teaching digital design by day, shipping CGI &amp; real-time broadcast graphics by night. <em>Now building the AI era of both.</em></p>
+    <p class="sub">Generative &amp; agentic AI workflows · creative coding · web design &amp; development · spatial &amp; XR design · real-time 3D &amp; virtual production — production-floor realities in the classroom, emerging tech in practice.</p>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><p class="n">24<i>+</i></p><p class="l">Years, dual-track</p></div>
+    <div class="stat"><p class="n">100<i>+</i></p><p class="l">Live matches, on-air gfx</p></div>
+    <div class="stat"><p class="n">5</p><p class="l">Institutions' syllabi authored</p></div>
+    <div class="stat"><p class="n">v5<i>.0</i></p><p class="l">Current release — AI era</p></div>
+  </div>
+
+  <p class="vlabel">CHANGELOG — A CAREER RELEASED IN VERSIONS</p>
+
+  <div class="vrow">
+    <div class="vhead">
+      <p class="vnum">v5.0<sup>●LIVE</sup></p>
+      <p class="vera">The AI Era</p>
+      <p class="vyears">2023 — NOW</p>
+      <p class="vwhere">Pearl Academy + independent practice, Delhi</p>
+    </div>
+    <div class="vbody">
+      <ul>
+        <li>Championed AI adoption from experimental to officially launched — early classroom integration; mentored student teams that built three working AI applications</li>
+        <li>Curated AI Portfolio 2026 — Pearl Academy's first showcase of AI-driven student projects</li>
+        <li>Launched a real-time interactive digital clone avatar (April 2026)</li>
+        <li>AI workshops for school principals &amp; educators, North Zone India (2024)</li>
+        <li>Gen-AI production workflows in client practice: concept → asset → deployment</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vhead">
+      <p class="vnum">v4.0</p>
+      <p class="vera">Educator × XR × Web</p>
+      <p class="vyears">2015 — NOW</p>
+      <p class="vwhere">Pearl Academy, School of Design — Associate Professor, CFG · independent web &amp; creative-coding practice</p>
+    </div>
+    <div class="vbody">
+      <p class="vtheme">Emerging tech &amp; campus infrastructure</p>
+      <ul>
+        <li>Founded the Immersive Studio (2017); proposed the Techno Creative Lab; co-launched the Future Labs course</li>
+        <li>Deployed spatial &amp; XR infrastructure campus-wide: VR/MR headsets (Quest 2/3), 3D scanning, holographics, interactive &amp; multi-wall projections, LED walls up to 34×8 ft (3-sided)</li>
+        <li>Metaverse initiative team member; hologram showcase at Comic Con, Delhi</li>
+      </ul>
+      <p class="vtheme">Curriculum &amp; pathways</p>
+      <ul>
+        <li>Designed the 3D Design &amp; VFX Pathway (2019); Immersive Media (VR/AR) courses across UG &amp; PG (B.Des, M.Des) and fashion programmes</li>
+        <li>Embedded Creative Coding (Processing, p5.js) and Web Design &amp; Development (HTML, CSS, JS) into the design curriculum; built real-time web systems incl. a live-tracking job portal</li>
+      </ul>
+      <p class="vtheme">Enablement</p>
+      <ul>
+        <li>3D entertainment content production — Red Cocoon Entertainment, Mumbai (2015–present) · master classes at NIFT HO (2019) · industry research: real-time broadcast graphics (2022) · web design &amp; development for clients</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>TJS.RESUME — 01/02</span>
+    <span class="red">CHANGELOG CONTINUES →</span>
+    <span>2026</span>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2 ==================== -->
+<div class="page p2">
+  <div class="metabar">
+    <span>TJS.RESUME — CHANGELOG, CONTINUED</span>
+    <span class="red">v3.0 → v1.0 + SYSTEM SPECS</span>
+    <span>02/02</span>
+  </div>
+
+  <div class="vrow">
+    <div class="vhead">
+      <p class="vnum">v3.0</p>
+      <p class="vera">Broadcast &amp; Studio</p>
+      <p class="vyears">2007 — 2015</p>
+      <p class="vwhere">Frameboxx · DoubleXStudios, New Delhi</p>
+    </div>
+    <div class="vbody">
+      <ul>
+        <li><b class="sg" style="font-weight:700;">Frameboxx</b> — Senior Technical Instructor (Graphics | 3D | Animation | VFX); Technical Core Committee; degree syllabi — LPU (2013–14), Sikkim Manipal Univ. (2013–15)</li>
+        <li><b class="sg" style="font-weight:700;">DoubleXStudios</b> — Creative Director (2012) ← Technical Director (2011) ← Project Manager (2010); Maruti Suzuki 3D films (2010–12) · Airtel 3G Saina Nehwal campaign · Samsung Mobile 3D · Castrol &amp; Dabur VFX</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vhead">
+      <p class="vnum">v2.0</p>
+      <p class="vera">CGI &amp; Instruction</p>
+      <p class="vyears">2002 — 2007</p>
+      <p class="vwhere">MAAC, Mumbai &amp; Delhi · freelance CG</p>
+    </div>
+    <div class="vbody">
+      <ul>
+        <li><b class="sg" style="font-weight:700;">MAAC</b> — Senior Instructor &amp; Technical Core Committee (all-India); Maya &amp; 3ds Max courseware; led six short-film productions for 24FPS Awards (2005–07)</li>
+        <li><b class="sg" style="font-weight:700;">K-Com &amp; Century Graphics</b> (freelance, to 2012) — 3D &amp; FX for TVCs; Discovery Channel — "The Ten Commandments" TV series</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="vrow">
+    <div class="vhead">
+      <p class="vnum">v1.0</p>
+      <p class="vera">Origins</p>
+      <p class="vyears">1997 — 2002</p>
+      <p class="vwhere">Caba Innovatives · Arena Multimedia, New Delhi</p>
+    </div>
+    <div class="vbody">
+      <ul>
+        <li>Senior trainer — 3D animation &amp; VFX; North Zone corporate workshops (3ds Max); TV serial promos, TVC graphics &amp; early digital VFX</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="split-l">
+      <p class="sec2"><b>SELECTED OUTPUT</b> — LIVE &amp; BROADCAST</p>
+      <div class="pad">
+        <div class="proj"><p class="yr">2021</p><p class="t"><b>Tamil Nadu Assembly Elections</b> — AR 3D real-time graphics for live television broadcast</p></div>
+        <div class="proj"><p class="yr">2024</p><p class="t"><b>Delhi New Secretariat</b> — AR 3D real-time broadcast virtual set (architecture, interiors, exteriors), General Elections coverage for news channels</p></div>
+        <div class="proj"><p class="yr">—</p><p class="t"><b>100+ live sports matches</b> — 3D logos, broadcast graphics &amp; image processing</p></div>
+        <div class="proj"><p class="yr">2010</p><p class="t"><b>Commonwealth Games, Delhi</b> — all-sports short animation clips featuring Shera, the official mascot</p></div>
+        <div class="proj"><p class="yr">—</p><p class="t"><b>NDTV</b> — 3D &amp; VFX projects</p></div>
+      </div>
+
+      <p class="sec2"><b>STANDARDS, SYLLABI &amp; JURY</b></p>
+      <div class="pad">
+        <div class="proj"><p class="yr">DSEU</p><p class="t">Govt. of Delhi — 3-year degree course syllabus author: Graphics, Animation, Web &amp; Design; published with named board credit</p></div>
+        <div class="proj"><p class="yr">CU/NIFT</p><p class="t">Chandigarh University &amp; NIFT (evening programme) — degree / course syllabus development</p></div>
+        <div class="proj"><p class="yr">MESC</p><p class="t">Media &amp; Entertainment Skills Council — multiple Qualification Packs (QPs): graphics, animation &amp; 3D courses</p></div>
+        <div class="proj"><p class="yr">2018</p><p class="t">Jury Member — IndiaSkills</p></div>
+        <div class="proj"><p class="yr">INTL</p><p class="t"><b>Anglia Ruskin University</b>, Cambridge UK — degree syllabi (with MAAC) · <b>Seneca College</b>, Toronto — PG course design, campus residency &amp; guest lectures (with Frameboxx)</p></div>
+      </div>
+
+      <p class="sec2"><b>AWARDS</b> — SELECTED</p>
+      <div class="pad awflow">
+        <b>BC Sanyal Lifetime Achievement (Education)</b> — College of Art, New Delhi · Lifetime Achievement (Teaching) 2009 · Intl. Singapore Asia Apollo Award 2006 — "Save the Planet" · Dronacharya Award, MAAC 2005 · Best Instructor, MAAC 2004 · 24FPS Awards — multiple wins &amp; podiums 2004–07 · mentored national award-winning student teams
+      </div>
+    </div>
+
+    <div>
+      <p class="sec2"><b>SYSTEM SPECS</b> — STACK</p>
+      <div class="padr">
+        <p class="tiert">AI &amp; generative <span class="mono">2023—</span></p>
+        <div>
+          <span class="tag hot">Claude</span><span class="tag hot">OpenAI · GPT</span><span class="tag hot">Gemini</span><span class="tag hot">Firefly</span>
+          <span class="tag">prompt engineering</span><span class="tag">AI design systems</span><span class="tag red">agentic — advancing</span><span class="tag">ML fundamentals</span>
+        </div>
+        <p class="tiert">Creative coding &amp; web <span class="mono">2015—</span></p>
+        <div>
+          <span class="tag">Processing</span><span class="tag">p5.js</span><span class="tag">HTML/CSS/JS</span><span class="tag">Rive</span><span class="tag">Spline 3D</span>
+        </div>
+        <p class="tiert">Spatial, XR &amp; real-time <span class="mono">2017—</span></p>
+        <div>
+          <span class="tag">AR broadcast gfx — live TV</span><span class="tag">VR/MR — Quest 2/3</span><span class="tag">TouchDesigner</span><span class="tag">projection mapping</span><span class="tag">holographics</span>
+        </div>
+        <p class="tiert">3D &amp; CGI production</p>
+        <div>
+          <span class="tag">Maya</span><span class="tag">3ds Max</span><span class="tag">Blender — parametric</span><span class="tag">ZBrush</span>
+        </div>
+        <p class="tiert">Design &amp; motion</p>
+        <div>
+          <span class="tag">Photoshop</span><span class="tag">Illustrator</span><span class="tag">InDesign</span><span class="tag">Figma</span><span class="tag">Character Animator</span><span class="tag">Premiere</span><span class="tag">After Effects</span><span class="tag">Audition</span>
+        </div>
+      </div>
+
+      <p class="sec2"><b>EDUCATION &amp; CERTS</b></p>
+      <div class="padr">
+        <p class="eduline"><b>Masters — Visual Effects &amp; Animation</b><br>MG University (2013–15)</p>
+        <p class="eduline"><b>Bachelor of Commerce</b><br>Panjab University, Chandigarh</p>
+        <p class="eduline"><b>Adobe Certified (2025)</b><br>Digital Publishing &amp; Design — Illustrator</p>
+        <p class="eduline"><b>Autodesk Certified (2003)</b><br>Maya · 3ds Max · Combustion</p>
+      </div>
+
+      <div class="padr" style="border-top:.6pt solid var(--hair);padding-top:1.8mm;">
+        <p class="eduline" style="color:var(--gray);">English · Punjabi · Hindi — AI &amp; agentic systems · emerging design tech · film &amp; documentaries · travel</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>TJS.RESUME — 02/02</span>
+    <span class="red">NEXT RELEASE IN DEVELOPMENT — v6.0</span>
+    <span>2026</span>
+  </div>
+</div>
+
+</body>
+</html>
