@@ -158,19 +158,17 @@ li::before{content:"→";position:absolute;left:0;color:var(--red);font-size:7pt
   a{color:inherit;}
   :focus-visible{outline:2px solid var(--red);outline-offset:2px;}
 
-  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
-       max-width:210mm;margin:14px auto 0;padding:0 4px;text-align:left;flex-wrap:wrap;}
-  .bar .who{font-size:11px;letter-spacing:.1em;color:#5c5c63;text-transform:uppercase;}
-  .bar button{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;
-       text-transform:uppercase;background:var(--ink);color:#fff;border:0;cursor:pointer;
-       padding:9px 16px;}
-  .bar button:hover{background:var(--red);}
+  .bar{display:flex;justify-content:center;max-width:210mm;margin:0 auto;padding:18px 0 46px;}
+  .bar button{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.18em;
+       text-transform:uppercase;background:none;color:#6d6d74;border:0;cursor:pointer;
+       padding:8px 4px;border-bottom:1px solid transparent;transition:color .15s,border-color .15s;}
+  .bar button:hover{color:var(--red);border-bottom-color:var(--red);}
 }
 
 /* Phone + tablet portrait: reflow the A4 sheet into a readable column */
 @media screen and (max-width:859px){
   body{font-size:15px;line-height:1.6;}
-  .bar{margin:12px auto 0;padding:0 16px;}
+  .bar{padding:14px 16px 34px;}
   .page{width:auto;max-width:680px;height:auto;margin:12px auto;box-shadow:0 1px 12px rgba(0,0,0,.12);}
 
   .metabar,.p2 .metabar{flex-wrap:wrap;gap:6px 14px;padding:14px 20px 10px;font-size:9.5px;}
@@ -230,10 +228,6 @@ li::before{content:"→";position:absolute;left:0;color:var(--red);font-size:7pt
 </style>
 </head>
 <body>
-<div class="noprint bar">
-  <span class="who">Tajinder J Singh — Resume 2026</span>
-  <button type="button" onclick="window.print()" title="A4 · margins none · background graphics ON">Save as PDF</button>
-</div>
 
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
@@ -449,6 +443,9 @@ li::before{content:"→";position:absolute;left:0;color:var(--red);font-size:7pt
     <span class="red">NEXT RELEASE IN DEVELOPMENT — v6.0</span>
     <span>2026</span>
   </div>
+</div>
+<div class="noprint bar">
+  <button type="button" onclick="window.print()" title="A4 · margins none · background graphics ON">Save as PDF</button>
 </div>
 
 </body>
