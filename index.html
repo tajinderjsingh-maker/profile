@@ -2,8 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>TJS — Resume v5.0 (2026)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Tajinder J Singh — AI Evangelist, Creative Technologist, Design Educator</title>
+<meta name="description" content="Resume of Tajinder J Singh — AI Evangelist, Creative Technologist and Associate Professor at Pearl Academy, Delhi. 24+ years across design education and real-time broadcast CGI.">
+<meta name="author" content="Tajinder J Singh">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0d0d0f">
+
+<!-- EDIT THIS: replace with your live GitHub Pages address -->
+<link rel="canonical" href="https://YOURNAME.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Tajinder J Singh — AI Evangelist, Creative Technologist, Design Educator">
+<meta property="og:description" content="24+ years, dual-track: design education by day, CGI and real-time broadcast graphics by night. Now building the AI era of both.">
+<meta property="og:url" content="https://YOURNAME.github.io/">
+<meta property="og:image" content="og-cover.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tajinder J Singh — AI Evangelist, Creative Technologist, Design Educator">
+<meta name="twitter:description" content="24+ years, dual-track: design education by day, CGI and real-time broadcast graphics by night.">
+<meta name="twitter:image" content="og-cover.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230d0d0f'/><text x='16' y='23' font-family='Helvetica,Arial,sans-serif' font-size='17' font-weight='bold' fill='%23ffffff' text-anchor='middle'>T</text><circle cx='27' cy='25' r='3' fill='%23e8232e'/></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tajinder J Singh",
+  "jobTitle": ["AI Evangelist", "Creative Technologist", "Associate Professor"],
+  "worksFor": { "@type": "Organization", "name": "Pearl Academy" },
+  "address": { "@type": "PostalAddress", "addressLocality": "New Delhi", "addressCountry": "IN" },
+  "url": "https://YOURNAME.github.io/",
+  "sameAs": [
+    "https://www.linkedin.com/in/tajinderjsingh/",
+    "https://www.instagram.com/aicreationlab/"
+  ],
+  "knowsAbout": ["Generative AI", "Creative Coding", "Real-Time Broadcast Graphics", "Augmented Reality", "Design Education", "3D and VFX Production"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0d0d0f;--red:#e8232e;--gray:#6d6d74;--hair:#0d0d0f;--paper:#fdfdfc;}
@@ -12,6 +52,7 @@ html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
 body{background:#e4e4e2;font-family:'Inter',sans-serif;color:var(--ink);font-size:8.8pt;line-height:1.5;}
 .page{width:210mm;height:297mm;background:var(--paper);margin:10mm auto;position:relative;overflow:hidden;box-shadow:0 3px 24px rgba(0,0,0,.18);display:flex;flex-direction:column;}
 .mono{font-family:'IBM Plex Mono',monospace;}
+.printonly{display:none;}
 .sg{font-family:'Space Grotesk',sans-serif;}
 .ub{font-family:'Unbounded',sans-serif;}
 
@@ -107,13 +148,92 @@ li::before{content:"→";position:absolute;left:0;color:var(--red);font-size:7pt
 .p2 .pad{padding-bottom:1.4mm;}
 .p2 .padr{padding-bottom:1.4mm;}
 .p2 .foot{padding:2.4mm 10mm;}
-@media print{body{background:none;}.page{margin:0;box-shadow:none;page-break-after:always;}.page:last-child{page-break-after:auto;}.noprint{display:none;}}
+@media print{body{background:none;}.page{margin:0;box-shadow:none;page-break-after:always;}.page:last-child{page-break-after:auto;}.noprint{display:none;}.printonly{display:inline;}}
 @page{size:A4;margin:0;}
 .noprint{max-width:210mm;margin:6mm auto 0;text-align:center;font-size:8.5pt;color:#666;font-family:'IBM Plex Mono',monospace;}
+
+/* ==================== WEB LAYER (screen only — print output unchanged) ==================== */
+@media screen{
+  html{-webkit-text-size-adjust:100%;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--red);outline-offset:2px;}
+
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;
+       max-width:210mm;margin:14px auto 0;padding:0 4px;text-align:left;flex-wrap:wrap;}
+  .bar .who{font-size:11px;letter-spacing:.1em;color:#5c5c63;text-transform:uppercase;}
+  .bar button{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;
+       text-transform:uppercase;background:var(--ink);color:#fff;border:0;cursor:pointer;
+       padding:9px 16px;}
+  .bar button:hover{background:var(--red);}
+}
+
+/* Phone + tablet portrait: reflow the A4 sheet into a readable column */
+@media screen and (max-width:859px){
+  body{font-size:15px;line-height:1.6;}
+  .bar{margin:12px auto 0;padding:0 16px;}
+  .page{width:auto;max-width:680px;height:auto;margin:12px auto;box-shadow:0 1px 12px rgba(0,0,0,.12);}
+
+  .metabar,.p2 .metabar{flex-wrap:wrap;gap:6px 14px;padding:14px 20px 10px;font-size:9.5px;}
+  .mast{grid-template-columns:1fr;}
+  .mast-name{padding:20px 20px 4px;}
+  h1{font-size:34px;}
+  .mast-side{border-left:0;border-top:.6pt solid var(--ink);padding:16px 20px 18px;}
+  .roles{font-size:17px;}
+  .aff{font-size:13px;margin-top:8px;}
+  .contact{font-size:11.5px;margin-top:12px;line-height:1.8;}
+
+  .ticker{flex-wrap:wrap;gap:6px 12px;padding:12px 20px;font-size:10px;line-height:1.55;}
+  .statement{padding:20px;}
+  .statement p{font-size:20px;max-width:none;line-height:1.4;}
+  .statement .sub{font-size:14px;max-width:none;margin-top:12px;}
+
+  .stats{grid-template-columns:repeat(2,1fr);}
+  .stat{padding:14px 16px;border-bottom:.6pt solid var(--ink);}
+  .stat:nth-child(2n){border-right:0;}
+  .stat:nth-last-child(-n+2){border-bottom:0;}
+  .stat .n{font-size:26px;}
+  .stat .l{font-size:10px;margin-top:6px;}
+
+  .vlabel{padding:18px 20px 0;font-size:10px;}
+  .vrow{grid-template-columns:1fr;}
+  .vhead,.p2 .vhead{border-right:0;padding:18px 20px 10px;}
+  .vnum,.p2 .vnum{font-size:28px;}
+  .vnum sup{font-size:11px;}
+  .vera,.p2 .vera{font-size:14px;margin-top:8px;}
+  .vyears{font-size:11px;margin-top:6px;}
+  .vwhere,.p2 .vwhere{font-size:12.5px;margin-top:7px;}
+  .vbody,.p2 .vbody{padding:0 20px 18px;}
+  .vtheme{font-size:13px;margin:14px 0 6px;}
+  li,.p2 li{font-size:14px;line-height:1.55;padding-left:18px;margin-bottom:6px;}
+  li::before{font-size:12px;top:1px;}
+
+  .split{grid-template-columns:1fr;}
+  .split-l{border-right:0;border-bottom:1.5pt solid var(--ink);}
+  .sec2,.p2 .sec2{padding:18px 20px 6px;font-size:10px;}
+  .pad,.padr,.p2 .pad,.p2 .padr{padding:0 20px 14px;}
+  .proj,.p2 .proj{gap:12px;margin-bottom:9px;}
+  .proj .yr{font-size:11px;flex:0 0 48px;padding-top:2px;}
+  .proj .t,.p2 .proj .t{font-size:13.5px;line-height:1.5;}
+  .tag,.p2 .tag{font-size:11px;padding:3px 7px;margin:0 4px 5px 0;}
+  .tiert,.p2 .tiert{font-size:13px;margin:16px 0 7px;}
+  .tiert .mono{font-size:10px;}
+  .eduline,.p2 .eduline{font-size:13px;line-height:1.5;margin-bottom:10px;}
+  .awflow,.p2 .awflow{font-size:13px;line-height:1.65;}
+  .foot,.p2 .foot{flex-wrap:wrap;gap:6px 12px;padding:14px 20px;font-size:10px;}
+}
+
+@media screen and (max-width:400px){
+  h1{font-size:27px;}
+  .statement p{font-size:18px;}
+  .metabar,.p2 .metabar{font-size:8.5px;}
+}
 </style>
 </head>
 <body>
-<div class="noprint">Preview · Export: Ctrl/Cmd+P → Save as PDF → A4 · margins none · background graphics ON</div>
+<div class="noprint bar">
+  <span class="who">Tajinder J Singh — Resume 2026</span>
+  <button type="button" onclick="window.print()" title="A4 · margins none · background graphics ON">Save as PDF</button>
+</div>
 
 <!-- ==================== PAGE 1 ==================== -->
 <div class="page">
@@ -130,9 +250,9 @@ li::before{content:"→";position:absolute;left:0;color:var(--red);font-size:7pt
     <div class="mast-side">
       <div>
         <p class="roles"><span>AI Evangelist</span><br>Creative Technologist<br>Design Educator</p>
-        <p class="aff">Associate Professor — Communication, Film &amp; Gaming (CFG), Pearl Academy, Delhi</p>
+        <p class="aff">Associate Professor: AI Evangelist, Digital Design Technologies — Communication, Film &amp; Gaming (CFG), Pearl Academy, Delhi</p>
       </div>
-      <p class="contact">tajinderjsingh@gmail.com<br>+91 98106 76654<br>in/tajinderjsingh</p>
+      <p class="contact"><span class="printonly">tajinderjsingh@gmail.com<br>+91 98106 76654<br></span>in/tajinderjsingh</p>
     </div>
   </div>
 
